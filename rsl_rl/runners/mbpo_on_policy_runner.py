@@ -168,7 +168,7 @@ class MBPOOnPolicyRunner(OnPolicyRunner):
 
             # Clear episode infos
             ep_infos.clear()
-            self.imagination_infos.clear()
+            if hasattr(self, "imagination_infos"): self.imagination_infos.clear()
             # Save code state
             if it == start_iter and not self.disable_logs:
                 # obtain all the diff files
